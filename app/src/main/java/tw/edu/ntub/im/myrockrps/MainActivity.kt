@@ -41,17 +41,21 @@ class MainActivity : AppCompatActivity() {
                 3 -> "布"
                 else -> "電腦寫錯了啦"
             }
-            when(true){
+            txtResultWin.text = when(true){
                 rand == 1 && rgGuess.checkedRadioButtonId == R.id.rbtnScissor,
                 rand == 2 && rgGuess.checkedRadioButtonId == R.id.rbtnRock,
-                rand == 3 && rgGuess.checkedRadioButtonId == R.id.rbtnPaper-> txtResultWin.text = "平手"
+                rand == 3 && rgGuess.checkedRadioButtonId == R.id.rbtnPaper ->
+                    "平手"
                 rand == 1 && rgGuess.checkedRadioButtonId == R.id.rbtnPaper,
                 rand == 2 && rgGuess.checkedRadioButtonId == R.id.rbtnScissor,
-                rand == 3 && rgGuess.checkedRadioButtonId == R.id.rbtnRock-> txtResultWin.text = "電腦贏"
+                rand == 3 && rgGuess.checkedRadioButtonId == R.id.rbtnRock ->
+                    "電腦贏"
                 rand == 1 && rgGuess.checkedRadioButtonId == R.id.rbtnRock,
                 rand == 2 && rgGuess.checkedRadioButtonId == R.id.rbtnPaper,
-                rand == 3 && rgGuess.checkedRadioButtonId == R.id.rbtnScissor-> txtResultWin.text = "我贏了"
-                else-> txtResultWin.text = "寫錯了"
+                rand == 3 && rgGuess.checkedRadioButtonId == R.id.rbtnScissor ->
+                    "我贏了"
+                else ->
+                    "寫錯了"
             }
 
         }
