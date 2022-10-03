@@ -7,12 +7,159 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/txtResultWin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:singleLine="false"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/txtLabelWin"
+        app:layout_constraintTop_toBottomOf="@+id/txtLabelWin" />
+
+    <TextView
+        android:id="@+id/txtResultMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:singleLine="false"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/txtLabelMe"
+        app:layout_constraintTop_toBottomOf="@+id/txtLabelMe" />
+
+    <TextView
+        android:id="@+id/txtResultComp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:singleLine="false"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/txtLabelComp"
+        app:layout_constraintTop_toBottomOf="@+id/txtLabelComp" />
+
+    <TextView
+        android:id="@+id/txtResultName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:singleLine="false"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/txtLabelName"
+        app:layout_constraintTop_toBottomOf="@+id/txtLabelName" />
+
+    <TextView
+        android:id="@+id/txtLabelMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:singleLine="false"
+        android:text="我出"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txtLabelWin"
+        app:layout_constraintTop_toBottomOf="@+id/btnGo" />
+
+    <TextView
+        android:id="@+id/txtLabelWin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:singleLine="false"
+        android:text="勝利者"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txtLabelName"
+        app:layout_constraintTop_toBottomOf="@+id/btnGo" />
+
+    <TextView
+        android:id="@+id/txtLabelComp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:singleLine="false"
+        android:text="電腦出"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txtLabelMe"
+        app:layout_constraintTop_toBottomOf="@+id/btnGo" />
+
+    <TextView
+        android:id="@+id/txtLabelName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:singleLine="false"
+        android:text="名字"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGo" />
+
+    <EditText
+        android:id="@+id/txtUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="請輸入姓名"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="林ㄚ杰" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="輸入你的名字就對了"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/txtUserName"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserName" />
+
+    <RadioGroup
+        android:id="@+id/rgGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <RadioButton
+            android:id="@+id/rbtnScissor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="剪刀"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbtnRock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="石頭"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/rbtnPaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="布"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#B6DAB8"
+        android:text="猜拳"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/rgGuess" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
